@@ -1,0 +1,35 @@
+//Lightbox
+
+var $overlay = $('<div id="overlay"></div>');
+var $prevArrow = $('<input type="button" class="prev-arrow">');
+var $image = $("<img>");
+var $nextArrow = $('<input type="button" class="next-arrow">');
+var $captionTitle = $("<h2></h2>");
+var $caption = $("<p></p>");
+var $nextImage = $(<"img">);
+
+$overlay.append($prevArrow);
+$overlay.append($image);
+$overlay.append($nextArrow);
+$overlay.append($captionTitle);
+$overlay.append($caption);
+$("body").append($overlay);
+
+$("a").click(function(event){
+  event.preventDefault();
+  var imageLocation = $(this).attr("href");
+  $image.attr("src", imageLocation);
+  
+  $overlay.show();
+    
+  var captionTitleText = $(this).children("img").attr("title");
+  $captionTitle.text(captionTitleText);
+  
+  var captionText = $(this).children("img").attr("alt");
+  $caption.text(captionText);
+});
+
+
+$overlay.click(function(){
+  $overlay.hide();
+});

@@ -1,0 +1,203 @@
+/* Global Layout Set-up */
+
+* { 
+  box-sizing: border-box;
+}
+
+body{
+	margin: 0;
+	padding: 0;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 300;
+	background-color: #efefef;
+	color: #4A4A4A;
+}
+
+form{
+    margin-bottom: 4%;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+}
+
+/* Text basic */
+
+h1{
+    font-weight: 600;
+}
+
+/* Global Layout Set-up */
+
+#wrapper{
+    width: 90%;
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+/* Form */
+
+label{
+    display:block;
+    height: 1em;
+}
+
+input{
+    height:3em;
+    width:100%;
+    background-color: #d8d8d6;
+    outline: none;
+    border: none;
+    padding: 1%;
+    letter-spacing: 0.1em;
+    transition: box-shadow .3s ease .3s, background-color .3s ease .3s, border .3s ease .3s;
+}
+
+input:focus{
+    box-shadow: 5px 5px 8px #ccc;
+    background-color: #efefef;
+    border: 1px solid #b2b2b2;
+}
+
+/* Gallery */
+
+#gallery li {
+    display: inline-block;
+    width: 46%;
+    margin-right: 6%;
+    margin-bottom:6%;
+    overflow: hidden;
+}
+
+#gallery li img {
+    width: 100%;
+}
+
+.prev-arrow {
+    background: url('../img/prev.png') no-repeat;
+    display: inline-block;
+ 
+}
+
+.next-arrow {
+    background: url('../img/next.png') no-repeat;
+    display: inline-block;
+ 
+}
+
+.prev-arrow,
+.next-arrow{
+    width: 30px;
+    height: 3em;
+    display: inline-block;
+    vertical-align: middle;
+    background-size: 83%;
+}
+
+
+.prev-arrow:hover, .next-arrow:hover {
+  cursor: pointer;
+}
+
+
+
+/* Gallery Overlay*/
+
+#overlay{
+ display: none;
+ position: fixed;
+ background-color: rgba(0, 0, 0, 0.8);
+ width: 100%;
+ height: 100%;
+ top: 0;
+ left: 0;
+ text-align: center;
+ z-index: 99;
+}
+
+#overlay img {
+    width:90%;
+  margin-top: 10%;
+  
+}
+
+#overlay p {
+  color: #fff;
+}
+
+
+
+/********** Media Querys ************/
+
+/* Small screens only */
+
+@media (max-width: 760px) {
+    
+    #gallery li:nth-child(2n+2) {
+    margin-right: 0;
+    clear: right;
+    }
+}
+
+
+/* Medium screens */
+
+@media (min-width: 760px) {
+    
+    #wrapper{
+        width: 80%;
+        }
+
+    #gallery li {
+        width: 21%;
+        margin-right: 3%;
+         margin-bottom:6%;
+    }
+    
+    #gallery li:nth-child(4n+4) {
+    margin-right: 0;
+    clear: right;
+    }
+    
+    #overlay img {
+    width:60%;
+  margin-top: 6%;
+        
+        
+  
+}
+    .prev-arrow{
+        float: left;
+    margin-top: -14em;
+    margin-left: 5em;
+    }
+    
+    .next-arrow{
+        float: right;
+    margin-top: -14em;
+    margin-right: 5em;
+        }
+}
+
+/* Large screens */
+
+@media (min-width: 1024px) {
+    
+    #gallery li {
+        width: 20%;
+        margin-right: 6%;
+    }
+    
+    .prev-arrow{
+        float: left;
+    margin-top: -23em;
+    margin-left: 10em;
+    }
+    
+    .next-arrow{
+        float: right;
+    margin-top: -23em;
+    margin-right: 10em;
+        }
+}
